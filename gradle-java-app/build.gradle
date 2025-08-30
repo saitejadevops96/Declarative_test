@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'org.sonarqube' version '4.4.1.3373'  // SonarQube plugin
+    id 'maven-publish'
 }
 
 group = 'com.saiteja.helloworld'
@@ -24,4 +25,21 @@ test {
 jar {
     archiveBaseName.set("gradle-java-app")
     archiveVersion.set("1.0.0-SNAPSHOT")
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "Nexus"
+            url = uri("http://16.170.148.26:8081/repository/maven-snapshots/")
+            credentials {
+                username = "admin"
+                password = "admin"
+            }
+        }
+    }
 }
