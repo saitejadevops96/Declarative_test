@@ -22,6 +22,6 @@ test {
     useJUnitPlatform()
 }
 jar {
-    archiveBaseName.set("hello-world")
+    archiveBaseName.set("gradle-java-app")
     archiveVersion.set("1.0.0-SNAPSHOT")
 }
