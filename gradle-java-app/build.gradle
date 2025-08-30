@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'org.sonarqube' version '4.4.1.3373'  // SonarQube plugin
 }
 
 group = 'com.saiteja.helloworld'
@@ -11,9 +12,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 }
 
 application {
     mainClass = 'com.saiteja.helloworld.App'
+}
+test {
+    useJUnitPlatform()
 }
