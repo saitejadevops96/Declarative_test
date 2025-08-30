@@ -21,3 +21,7 @@ application {
 test {
     useJUnitPlatform()
 }
+jar {
+    archiveBaseName.set("hello-world")
+    archiveVersion.set("1.0.0-SNAPSHOT")
+}
